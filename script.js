@@ -82,10 +82,11 @@ function generatePassword(){
     finArray.push(ansArray[Math.floor(Math.random() * ansArray.length)]);
 
   }
-  
-  console.log(finArray.join(""));
-   
+      
+  console.log(finArray.join("")); 
+
 };
+
 
  
 // Write password to the #password input
