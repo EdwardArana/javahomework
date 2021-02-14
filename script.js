@@ -10,7 +10,7 @@ function generatePassword(){
   var ansArray = [];
   var finArray =[];
 
-  var myChildren = numbers.concat(lcLetter, ucLetter, spLetter, ansArray, finArray);
+ 
 
   var passwordLength = prompt("Choose a password length between 8 and 128 characters");
   
@@ -29,7 +29,7 @@ function generatePassword(){
     console.log(passwordLength)
   }
   var wantNumber = confirm("Do you want numbers in your password?");
-  var wantLc = confirm("Do you want  lower case letters in your password?");
+  var wantLc = confirm("Do you want lower case letters in your password?");
   var wantUc = confirm("Do you want upper case letters in your password?");
   var wantSp = confirm("Do you want special characters in your password?");
 
@@ -79,7 +79,9 @@ function generatePassword(){
   }
   
   finArray.push(ansArray[Math.floor(Math.random() * ansArray.length)]);
-  console.log(finArray);
+
+  
+  console.log(finArray.join(""));
   
 };
 
