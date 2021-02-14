@@ -82,9 +82,11 @@ function generatePassword(){
     finArray.push(ansArray[Math.floor(Math.random() * ansArray.length)]);
 
   }
-      
+  
+
   console.log(finArray.join("")); 
 
+  return finArray;
 };
 
 
