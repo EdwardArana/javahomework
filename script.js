@@ -9,6 +9,7 @@ function generatePassword(){
   var spLetter = "!@#$%^&*()_-+=`~[]{}".split("");
   var ansArray = [];
   var finArray =[];
+
   var passwordLength = prompt("Choose a password length between 8 and 128 characters");
   
   while (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128 || passwordLength === "") {
@@ -21,6 +22,7 @@ function generatePassword(){
     }else if (passwordLength === "" || isNaN(passwordLength)){
       
       var passwordLength = prompt("Enter a valid value");
+      console.log("whateeer")
     }
     console.log(passwordLength)
   }
@@ -30,46 +32,54 @@ function generatePassword(){
   var wantSp = confirm("Do you want special characters in your password?");
 
 
-if (wantNumber) {
+  if (wantNumber) {
   
   for(var i = 0; i < numbers.length; i++){
-    console.log("wwww1");
-   ansArray.push(numbers[i])
+  
+  ansArray.push(numbers[i])
   
   }
+  console.log("wwww1");
   console.log(ansArray);
-}
+  }
 
-if (wantLc) {
+  if (wantLc) {
  
   for(var i = 0; i < lcLetter.length; i++){
-    console.log("wwww2");
-   ansArray.push(lcLetter[i])
+  
+  ansArray.push(lcLetter[i])
   
   }
+  console.log("wwww2");
   console.log(ansArray);
-}
+  }
 
-if (wantUc) {
+  if (wantUc) {
   
   for(var i = 0; i < ucLetter.length; i++){
-    console.log("wwww3");
-    ansArray.push(ucLetter[i])
+  
+  ansArray.push(ucLetter[i])
   
   }
+  console.log("wwww3"); 
   console.log(ansArray);
-}
+  } 
 
-if (wantSp) {
+  if (wantSp) {
   
   for(var i = 0; i < spLetter.length; i++){
-    console.log("wwww4");
-    ansArray.push(spLetter[i])
-    
-}
-console.log(ansArray);
-}};
+  
+  ansArray.push(spLetter[i])
+ 
+  }
+  console.log("wwww4");
+  console.log(ansArray);
+  }
+  
+  finArray.push(ansArray[Math.floor(Math.random() * ansArray.length)]);
+  console.log(finArray.join(""));
 
+};
 
 // Write password to the #password input
 function writePassword() {
@@ -78,7 +88,9 @@ function writePassword() {
 
   passwordText.value = password;
 
-}
+};
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
