@@ -24,7 +24,7 @@ function generatePassword(){
     }else if (passwordLength === "" || isNaN(passwordLength)){
       
       var passwordLength = prompt("Enter a valid value");
-      console.log("whateeer")
+      
     }
     console.log(passwordLength)
   }
@@ -78,13 +78,16 @@ function generatePassword(){
   console.log(ansArray);
   }
   
-  finArray.push(ansArray[Math.floor(Math.random() * ansArray.length)]);
+  for( var i = 0; i < passwordLength; i++){
+    finArray.push(ansArray[Math.floor(Math.random() * ansArray.length)]);
 
+  }
   
   console.log(finArray.join(""));
-  
+   
 };
 
+ 
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
