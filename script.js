@@ -10,6 +10,8 @@ function generatePassword(){
   var ansArray = [];
   var finArray =[];
 
+  var myChildren = numbers.concat(lcLetter, ucLetter, spLetter, ansArray, finArray);
+
   var passwordLength = prompt("Choose a password length between 8 and 128 characters");
   
   while (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128 || passwordLength === "") {
@@ -77,8 +79,8 @@ function generatePassword(){
   }
   
   finArray.push(ansArray[Math.floor(Math.random() * ansArray.length)]);
-  console.log(finArray.join(""));
-
+  console.log(finArray);
+  
 };
 
 // Write password to the #password input
