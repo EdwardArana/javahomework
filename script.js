@@ -1,24 +1,24 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var numbers = "0123456789".split("");
-var lcLetter = "abcdefghijklmnopqrstuvwxyz".split("");
-var ucLetter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
-var spLetter = "!@#$%^&*()_-+=`~[]{}".split("");
-var ansArray = [];
-var finArray =[];
 
 function generatePassword(){
   var passwordLength = 0;
+  var numbers = "0123456789".split("");
+  var lcLetter = "abcdefghijklmnopqrstuvwxyz".split("");
+  var ucLetter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+  var spLetter = "!@#$%^&*()_-+=`~[]{}".split("");
+  var ansArray = [];
+  var finArray =[];
+  var passwordLength = prompt("Choose a password length between 8 and 128 characters");
   
-  while (passwordLength < 8 || passwordLength > 128) {
+  while (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128 || passwordLength === "") {
     
-    var passwordLength = prompt("Choose a password length between 8 and 128 characters");
     
     if (passwordLength < 8 || passwordLength > 128) {
       
       var passwordLength = prompt("Password is too short or too long. Please choose between 8 and 128 characters");
    
-    }else if (passwordLength === "" || Number.isNaN(passwordLength)){
+    }else if (passwordLength === "" || isNaN(passwordLength)){
       
       var passwordLength = prompt("Enter a valid value");
     }
@@ -31,25 +31,43 @@ function generatePassword(){
 
 
 if (wantNumber) {
+  
   for(var i = 0; i < numbers.length; i++){
-
-   ansArray.push(wantNumber[i])
+    console.log("wwww1");
+   ansArray.push(numbers[i])
+  
   }
-} else  if (wantLc) {
+  console.log(ansArray);
+}
+
+if (wantLc) {
+ 
   for(var i = 0; i < lcLetter.length; i++){
-
-   ansArray.push(wantLc[i])
+    console.log("wwww2");
+   ansArray.push(lcLetter[i])
+  
   }
-}else if (wantUc) {
+  console.log(ansArray);
+}
+
+if (wantUc) {
+  
   for(var i = 0; i < ucLetter.length; i++){
-
-    ansArray.push(wantUc[i])
+    console.log("wwww3");
+    ansArray.push(ucLetter[i])
+  
   }
-}else if (wantSp){
+  console.log(ansArray);
+}
+
+if (wantSp) {
+  
   for(var i = 0; i < spLetter.length; i++){
-
-    ansArray.push(wantSp[i])
-  }
+    console.log("wwww4");
+    ansArray.push(spLetter[i])
+    
+}
+console.log(ansArray);
 }};
 
 
